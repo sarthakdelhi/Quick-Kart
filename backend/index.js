@@ -1,4 +1,4 @@
-const port=4000;
+const port=process.env.Port || 4000;
 const express=require("express");
 const app=express();
 const mongoose=require("mongoose");
@@ -11,9 +11,16 @@ app.use(express.json());
 app.use(cors());
 
 //Database connection with MongoDB
-mongoose.connect("mongodb+srv://21uec122:Delhi@2021@cluster0.j83jxri.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+// mongoose.connect("mongodb+srv://21uec122:Delhi@2021@cluster0.j83jxri.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+//mongoose.connect("mongodb+srv://sarthakoberoidelhi:bTPhiguiPyMHJW0B@cluster0.1tx4k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+//mongoose.connect("mongodb+srv://sarthakoberoi:bTPhiguiPyMHJW0B@cluster0.aqvox.mongodb.net/")
+//mongoose.connect("mongodb+srv://sarthakoberoidelhi:bTPhiguiPyMHJW0B@cluster0.1tx4k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+//mongoose.connect("mongodb+srv://sarthakoberoidelhi:bTPhiguiPyMHJW0B@cluster0.1tx4k.mongodb.net/");
+mongoose.connect("mongodb+srv://sarthakoberoidelhi:iQyTgA4P9zR4bict@cluster0.ppzoa.mongodb.net/");
 
+// bTPhiguiPyMHJW0B
 //API Creation
+//mongodb+srv://sarthakoberoidelhi:<db_password>@cluster0.1tx4k.mongodb.net/
 app.get("/",(req,res)=>{
     res.send("Express App is Running");
 })
